@@ -12,6 +12,8 @@ RUN gem install --no-document \
       thread_safe \
       coderay
 
+#RUN echo $asciidoctor_version > /asciidoctor.version
+
 # cleanup code
 RUN gem cleanup && \
     rm -rf /tmp/* /var/cache/apk/*
@@ -19,4 +21,7 @@ RUN gem cleanup && \
 WORKDIR /documents
 VOLUME /documents
 
-CMD ["/bin/sh"]
+COPY asciidoctor-multipage.rb /root/
+COPY docker-entrypoint.sh /root/entrypoint.sh
+ENTRYPOINT ["/root/entrypoint.sh"]
+#CMD asciidoctor -v

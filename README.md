@@ -60,16 +60,14 @@ $ asciidoctor -r ./asciidoctor-multipage.rb -b multipage_html5 \
 First, generate the docker image:
 
 ```
-$ ./docker-image-build.sh
+$ ./docker-build.sh
 ```
 
-Repeat this command when you want generate the documents:
+To build the sample document under `test` run:
 
 ```
-$ ./docker-builder/build.sh
+$ ./asciidoctor-multipage test/sample.adoc
 ```
-
-See other usage instructions inside the `build.sh` script.
 
 ## Work needed
 
