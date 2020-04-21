@@ -4,7 +4,13 @@ ARG asciidoctor_version
 
 # apk packages installation
 RUN apk add --no-cache \
-      ruby
+      ruby \
+      tzdata
+
+# Configure Timezone. Refs:
+# https://serverfault.com/a/683651
+# https://github.com/gliderlabs/docker-alpine/issues/136#issuecomment-272703023
+ENV TZ America/Sao_Paulo
 
 # ruby packages installation
 RUN gem install --no-document \

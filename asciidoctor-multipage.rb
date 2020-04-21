@@ -183,7 +183,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
           parts_list << Asciidoctor::ListItem.new(parts_list, text)
         end
       end
-      node << parts_list
+      # PJ: Adição da lista de parts comentada:
+      #node << parts_list
 
       # Add navigation links
       add_nav_links(node)
@@ -221,14 +222,14 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         home_page = doc
         # NOTE, there are some non-breaking spaces (U+00A0) below.
         if previous_page != parent_page
-          links << %(← Previous: <<#{previous_page.id}>>)
+          links << %(← Anterior: <<#{previous_page.id}>>)
         end
-        links << %(↑ Up: <<#{parent_page.id}>>)
-        links << %(⌂ Home: <<#{home_page.id}>>) if home_page != parent_page
+        links << %(↑ Acima: <<#{parent_page.id}>>)
+        links << %(⌂ Início: <<#{home_page.id}>>) if home_page != parent_page
       end
       if page_index != pages.length-1
         next_page = pages[page_index+1]
-        links << %(Next: <<#{next_page.id}>> →)
+        links << %(Próximo: <<#{next_page.id}>> →)
       end
       block = Asciidoctor::Block.new(parent = doc,
                                      context = :paragraph,
@@ -548,7 +549,7 @@ class MultipageHtml5CSS < Asciidoctor::Extensions::DocinfoProcessor
                        font-size: 0.9em;})
     # Style navigation bar at bottom of each page
     css << %(#content{display: flex; flex-direction: column; flex: 1 1 auto;}
-             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer{text-align: center; margin-top: auto; border-top: 1px solid #ddddd8;}
              .nav-footer > p > a {white-space: nowrap;})
     %(<style>#{css.join(' ')}</style>)
   end
