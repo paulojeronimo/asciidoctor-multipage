@@ -32,13 +32,15 @@ See also:
 
 ## Notes and limitations
 
-- Tested with Asciidoctor v1.5.7.1; inline anchors in unordered list items
-  require the fix for asciidoctor issue #2812.
-- This extension is tightly coupled with Asciidoctor internals, and future
-  changes in Asciidoctor may require updates here. Hopefully this extension
-  exposes ways in which the Asciidoctor API can be improved.
-- Footnotes are currently not supported.
-- Please contribute fixes and enhancements!
+- Only Asciidoctor v1.5.7.1 is supported. See [issue
+  #2](https://github.com/owenh000/asciidoctor-multipage/issues/2).
+- Footnotes are currently not supported. See [issue
+  #3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
+- Inline anchors in unordered list items require the fix for [asciidoctor issue
+  #2812](https://github.com/asciidoctor/asciidoctor/issues/2812).
+- Block-level content in table cells, with the AsciiDoc "a" attribute, is not
+  supported. See [issue
+  #1](https://github.com/owenh000/asciidoctor-multipage/issues/1).
 
 ## Usage
 
@@ -55,25 +57,32 @@ $ asciidoctor -r ./asciidoctor-multipage.rb -b multipage_html5 \
     test/sample.adoc
 ```
 
-### With Docker
+Thank you to an anonymous sponsor for supporting my work on this and other
+projects! ✨
 
-First, generate the docker image:
+## Contributing
 
-```
-$ ./docker-build.sh
-```
+If you interested in contributing to this project, thank you!
 
-To build the sample document under `test` run:
+- Share this project with someone else who may be interested
+- Contribute a fix for a currently open
+  [issue](https://github.com/owenh000/asciidoctor-multipage/issues) (if any)
+  using a GitHub pull request (please discuss before working on any large
+  changes)
+- Open a new issue for a problem you've discovered or a possible enhancement
+- Sponsor my work through [GitHub Sponsors](https://github.com/owenh000) (see
+  also [owenh.net/support](https://owenh.net/support))
 
-```
-$ ./asciidoctor-multipage test/sample.adoc
-```
+Thank you for your interest!
 
-## Work needed
+## Copyright and License
 
-If you are interested in working on this extension, please consider the
-following:
+Copyright 2019-2020 Owen T. Heisler. MIT license.
 
-- Update for use with the latest Asciidoctor release
-- Add support for footnotes
-- Add a test suite
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+This source code may be used according to the terms of the MIT license. You
+should have received a copy of this license along with this program (see
+`LICENSE`).
