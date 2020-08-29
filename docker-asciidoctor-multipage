@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -eou pipefail
+
+DOCKER_ADOC_MP_VER=${DOCKER_ADOC_MP_VER:-1.5.7.1}
+DOCKER_ADOC_MP_IMG=${DOCKER_ADOC_MP_IMG:-"paulojeronimo/asciidoctor-multipage:$DOCKER_ADOC_MP_VER"}
+
+docker run -it --rm -v "$PWD":/documents \
+  $DOCKER_ADOC_MP_IMG \
+  "$@"

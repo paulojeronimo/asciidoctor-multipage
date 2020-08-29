@@ -1,0 +1,16 @@
+= Build with Docker
+
+First, generate the docker image:
+
+----
+$ ./docker-build.sh
+----
+
+Then, to build the sample document under `test`, run:
+
+----
+$ ./docker-asciidoctor-multipage test/sample.adoc
+----
+
+You can copy this last script to any directory
+available in your PATH to make it more usable.
