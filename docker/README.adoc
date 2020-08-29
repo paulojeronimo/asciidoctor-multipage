@@ -1,0 +1,16 @@
+= asciidoctor-multipage Docker Image
+
+First, generate the docker image:
+
+----
+$ ./build.sh
+----
+
+Then, to build the sample document under `../test`, run:
+
+----
+$ ./test.sh
+----
+
+You can copy the script `docker-asciidoctor-multipage` to any directory
+available in your PATH to make it more usable.

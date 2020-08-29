@@ -22,6 +22,6 @@ WORKDIR /documents
 VOLUME /documents
 
 COPY asciidoctor-multipage.rb /root/
-COPY docker-entrypoint.sh /root/entrypoint.sh
+COPY entrypoint.sh /root/entrypoint.sh
 ENTRYPOINT ["/root/entrypoint.sh"]
 #CMD asciidoctor -v
